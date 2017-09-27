@@ -10,10 +10,21 @@ package parcialpunto2;
  * @author Estudiante
  */
 public class Tipo {
+
     private String codigo;
 
     public Tipo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return codigo;
     }
 
 }

@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package parcialpunto2;
+
 import java.util.*;
+
 /**
  *
  * @author Estudiante
  */
 public class Cuenta {
-    
+
     private ArrayList<Movimiento> movimientos;
     private int numeroCuenta;
     private double saldoCuenta;
@@ -22,14 +24,19 @@ public class Cuenta {
         this.saldoCuenta = saldoCuenta;
         this.fecha = fecha;
         this.nombreCliente = nombreCliente;
-        ArrayList<Movimiento> movimientos= new ArrayList();
+        ArrayList<Movimiento> movimientos = new ArrayList();
         this.movimientos = movimientos;
     }
-    
-    public void crearMovimientos(Tipo tipo, String fecha, double monto){
-        Movimiento nuevoMovimiento = new Movimiento(tipo,fecha,this.saldoCuenta,monto);
+
+    public void crearMovimientos(Tipo tipo, String fecha, double monto) {
+        Movimiento nuevoMovimiento = new Movimiento(tipo, fecha, this.saldoCuenta, monto);
+        this.saldoCuenta += monto;
         movimientos.add(nuevoMovimiento);
     }
-   
-    
+
+    @Override
+    public String toString() {
+        return '\n'+"Cuenta: " + numeroCuenta + '\n' + "Fecha: " + fecha + '\n' + "Nombre del cliente: " + nombreCliente + '\n' + "Movimientos: " + movimientos + '\n' +  "Saldo actual: " + saldoCuenta;
+    }
+
 }
